@@ -1,0 +1,12 @@
+<div class="flex-center flex-col gap-4">
+  <div class="" *ngFor="let item of buttonText ; index as key">
+    <button id="{{key}}" class="{{item.color}}  button  w-[25rem] flex-center   "
+      [ngClass]="item.color === 'bg-white' ? 'text-black button_phone ' : 'text-white'">
+      <fa-icon [icon]="item.icon" class="mr-auto "
+        [ngClass]="item.color ==  'bg-white' ? 'text-red-500' :'text-white'"></fa-icon>
+      <span class="flex-1">{{item.text}}</span>
+
+    </button>
+  </div>
+
+</div>

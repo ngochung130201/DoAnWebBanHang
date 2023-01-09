@@ -1,12 +1,20 @@
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 
-export type TypeFooter =
+type TypeFooter =
   {
     title: string;
     item: Array<string>;
   }
-export type TypeBank = {
+type TypeBank = {
   icon: IconDefinition,
   name: string
 }
-
+type TypeaddressFooter = {
+  title: string;
+  address: string
+}
+export {
+  TypeFooter,
+  TypeBank,
+  TypeaddressFooter
+}

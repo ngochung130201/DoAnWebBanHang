@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { footerBank, itemFooter } from './footer.data';
+import { addressFooter, footerBank, itemFooter } from './footer.data';
 import { TypeFooter } from './typefooter';
 
 @Component({
@@ -14,5 +14,6 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
   itemFooter = itemFooter;
-  footerBank = footerBank
+  footerBank = footerBank;
+  addressFooter = addressFooter
 }

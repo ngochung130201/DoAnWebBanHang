@@ -7,14 +7,18 @@ import { MyArrayTypeButton } from '../login/login.component';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-
   constructor() { }
   @Input() buttonText!: MyArrayTypeButton;
-
+  @Input() isCheckPhone!: boolean;
   ngOnInit(): void {
-    this.buttonText.map((item) => {
-      console.log(item.color);
-    })
-  }
 
+  }
+  OnClickPhone(key: number): boolean {
+    if (key === 2) {
+      this.isCheckPhone = !this.isCheckPhone;
+      return this.isCheckPhone;
+    }
+    return false;
+
+  }
 }

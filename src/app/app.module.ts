@@ -9,6 +9,13 @@ import { ButtonComponent } from './components/button/button.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './components/footer/footer.component';
 
+import { HomeComponent } from './pages/home/home.component';
+import { ProductComponent } from './pages/product/product.component';
+import { RouterModule } from '@angular/router';
+import { CartComponent } from './pages/cart/cart.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -17,13 +24,19 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     ButtonComponent,
     FooterComponent,
+    HomeComponent,
+    ProductComponent,
+    CartComponent,
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule
+
 
   ],
   providers: [],

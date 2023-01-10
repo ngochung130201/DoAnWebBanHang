@@ -1,1 +1,4 @@
-<app-login></app-login>
+<router-outlet></router-outlet>
+<button class="button-gotoTop" *ngIf="isShow" (click)="gotoTop()">
+  <fa-icon class="text-color-primary" [icon]="upIcon"></fa-icon>
+</button>

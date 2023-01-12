@@ -70,23 +70,68 @@
                     <div class="text-left">
                       <div class="custom-number-input flex flex-col items-center h-10 w-32 bg-[#f8f8fc]">
                         <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
-                          <button data-action="decrement" (click)="countDown(cart.id,cart.priceDiscount)"
-                            class="text-gray-600 h-full w-20 rounded-l cursor-pointer outline-none">
+                          <button [ngClass]="isDisable===false ? 'cursor-not-allowed ' :'cursor-pointer'"
+                            data-action="decrement" (click)="countDown(cart.id,cart.priceDiscount)"
+                            class=" text-gray-600 h-full w-20 rounded-l cursor-pointer outline-none">
                             <span class="m-auto text-2xl font-thin">−</span>
                           </button>
                           <input type="number"
                             class="focus:outline-none text-center w-full font-semibold text-md hover:text-black focus:text-black md:text-basecursor-default flex items-center text-gray-700 outline-none"
-                            name="custom-input-number" value="{{ cart.amount}}" />
+                            name="custom-input-number " value="{{ cart.amount}}" />
                           <button (click)="countUp(cart.id,cart.priceDiscount)" data-action="increment"
                             class="h-full w-20 rounded-r cursor-pointer">
                             <span class="m-auto text-2xl font-thin">+</span>
                           </button>
                         </div>
 
-                        <button
+                        <button (click)="toggleModal()"
                           class="text-[#1990ff] mt-3 hover:text-[#ff0000] hover:transition-all ease-linear delay-200 cursor-pointer">
                           Xóa
                         </button>
+
+                        <div *ngIf="showModal"
+                          class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+                          <div class="relative w-auto my-6 mx-auto max-w-sm">
+                            <!--content-->
+                            <div
+                              class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                              <!--header-->
+                              <div
+                                class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                                <div class="">
+                                  <span class="text-2xl flex justify-center items-center font-semibold">Chú ý</span>
+                                </div>
+                                <button
+                                  class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                  (click)="toggleModal()">
+                                  <span
+                                    class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                    ×
+                                  </span>
+                                </button>
+                              </div>
+                              <!--body-->
+                              <div class="relative p-6 flex-auto">
+                                <p>Bạn muốn xoá sản phẩm này ra khỏi giỏ hàng?</p>
+                              </div>
+                              <!--footer-->
+                              <div
+                                class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                                <button
+                                  class="text-color-main border border-solid  px-6 py-3 boder-[#eeeeeeeeee] background-transparent font-bold uppercase  text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                  type="button" (click)="toggleModal()">
+                                  Hủy bỏ
+                                </button>
+                                <button
+                                  class="button-delete font-bold uppercase text-sm rounded shadow hover:shadow-lg outline-none focus:outline-none ml-2 mr-1 mb-1 ease-linear transition-all duration-150"
+                                  type="button" (click)="toggleModal()">
+                                  Đồng ý
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div *ngIf="showModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>
                       </div>
                     </div>
                   </td>
@@ -103,7 +148,7 @@
                   </td>
                   <td class="p-2">
                     <div class="flex justify-center">
-                      <button>
+                      <button (click)="toggleModal()">
                         <svg class="w-8 h-8 rounded-full hover:bg-gray-100 hover:text-[#ff0000] p-1" fill="none"
                           stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -142,14 +187,14 @@
         </div>
         <div class="bg-white rounded-sm border p-3 border-gray-200">
           <div class="cart-title mb-4">Thanh toán</div>
-          <div class="flex justify-between mb-1">
+          <div class="flex justify-between  mb-1">
             <span>Tổng tạm tính</span>
-            <span class="text-color-main font-bold text-base">{{sumMoney}} đ</span>
+            <span class="text-color-main font-bold block text-right text-base">{{sumMoney}} </span>
           </div>
           <div class="flex justify-between">
             <span>Tổng tiền</span>
-            <div class="flex flex-col items-center">
-              <span class="text-[#1435c3] font-bold text-base">{{sumMoney}}</span>
+            <div class="flex flex-col ">
+              <span class="text-[#1435c3] font-bold text-right text-base">{{sumMoney}}</span>
               <span class="block text-[#82869e] font-medium text-xs">(Đã bao gồm VAT)</span>
             </div>
           </div>

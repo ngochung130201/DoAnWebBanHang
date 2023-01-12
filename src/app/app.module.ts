@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductComponent } from './pages/product/product.component';
 import { RouterModule } from '@angular/router';
 import { CartComponent } from './pages/cart/cart.component';
+import { PromoComponent } from './pages/promo/promo.component';
 
 
 
@@ -27,6 +28,7 @@ import { CartComponent } from './pages/cart/cart.component';
     HomeComponent,
     ProductComponent,
     CartComponent,
+    PromoComponent,
 
 
   ],

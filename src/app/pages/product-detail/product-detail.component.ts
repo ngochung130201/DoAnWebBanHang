@@ -1,70 +1,73 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { faAngleLeft, faAngleRight, faTruckFast } from '@fortawesome/free-solid-svg-icons';
-import { Typeproduct } from './typeHome.type';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { faTruckFast, faShield, faRotateLeft, faGear, faLaptop, faChevronCircleRight, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { TyProductDetail } from './productdetail.type';
+import lgZoom from 'lightgallery/plugins/zoom';
+import { BeforeSlideDetail } from 'lightgallery/lg-events';
+import { Typeproduct } from '../home/typeHome.type';
 import SwiperCore, { Navigation, Pagination, Swiper } from 'swiper';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination]);
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-product-detail',
+  templateUrl: './product-detail.component.html',
+  styleUrls: ['./product-detail.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HomeComponent implements OnInit {
-  selectIndex = 0;
-  indicators = true;
-  @Input() autoSilde = false;
-  slideInteval = 3000;
-  freeShip = faTruckFast;
-  nextIcon = faAngleRight;
-  leftIcon = faAngleLeft
-  images = [
+export class ProductDetailComponent implements OnInit {
 
-    {
-      url:
-        'https://lh3.googleusercontent.com/JErVt0nHkSDcHTMHlNh5ZBDlmFUd1eTkPEGpRl2Xnw6IVtzlwGeHExaVmi_czJdSjx3U5ITgRpPUF1OYRs635mGrXzvEsc0-=rw-w1920',
-      alt: 'nature2',
+  constructor() { }
+  freeShip = faTruckFast;
+  faShield = faShield;
+  faRoteleLeft = faRotateLeft;
+  faGear = faGear;
+  faLaptop = faLaptop;
+  faRight = faChevronRight;
+  isNavigation: boolean = false;
+  ngOnInit(): void {
+
+  }
+  listService: Array<TyProductDetail> = [{
+    id: '1',
+    title: 'Chính sách bán hàng',
+    items: [{
+      icon: faTruckFast,
+      text: 'Miễn phí giao hàng cho đơn hàng từ 800K'
     },
     {
-      url:
-        'https://lh3.googleusercontent.com/ZLv9j8ndxgb6GKdwItALJ1YEwtlkIIgnd_tUEs3PkH6fwfmKoS5xeNULQXdU42JvahF1Zuwr5K7dXZZl_0aQIPYIvRDcAp9D=w1920-rw',
-      alt: 'nature2',
+      icon: faShield,
+      text: 'Cam kết hàng chính hãng 100%'
     },
+    {
+      icon: faRotateLeft,
+      text: 'Đổi trả trong vòng 10 ngày'
+    },
+
+    ]
+
+  },
+  {
+    id: '2',
+    title: 'Dịch vụ khác',
+    items: [{
+      icon: faGear,
+      text: 'Sửa chữa đồng giá 150.000đ.'
+    },
+    {
+      icon: faLaptop,
+      text: 'Vệ sinh máy tính, laptop.'
+    },
+    {
+      icon: faShield,
+      text: 'Bảo hành tại nhà.'
+    },
+
+    ]
+
+  },
 
 
   ]
-  selectImage(index: number): void {
-    this.selectIndex = index;
-  }
-  OnPrevClick(): void {
-    if (this.selectIndex === 0) {
-      this.selectIndex = this.images.length - 1;
-    }
-    else {
-      this.selectIndex--;
-    }
-  }
-  OnNextClick(): void {
-    if (this.selectIndex === this.images.length - 1) {
-      this.selectIndex = 0;
-    }
-    else {
-      this.selectIndex++;
-    }
-  }
-  constructor() { }
-
-  ngOnInit(): void {
-    if (this.autoSilde) {
-      this.autoSildeImages();
-    }
-  }
-  autoSildeImages(): void {
-    setInterval(() => {
-      this.OnNextClick();
-    }, this.slideInteval)
-  }
   listProduct: Array<Typeproduct> = [{
     brand: 'MSI',
     freeShip: true,
@@ -212,12 +215,19 @@ export class HomeComponent implements OnInit {
     price: 3090000,
     reducedPrice: 12
   },
-
-
-
-
-
   ]
+  settings = {
+    counter: false,
+    plugins: [lgZoom]
+  };
+  onBeforeSlide = (detail: BeforeSlideDetail): void => {
+    const { index, prevIndex } = detail;
+    console.log(index, prevIndex);
+  };
+
+  showNavigation(): boolean {
+    return this.isNavigation = !this.isNavigation;
+  }
   setSwiperInstance(swiper: Swiper) {
     setInterval(() => {
       swiper.slideNext();

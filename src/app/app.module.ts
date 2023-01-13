@@ -14,8 +14,9 @@ import { ProductComponent } from './pages/product/product.component';
 import { RouterModule } from '@angular/router';
 import { CartComponent } from './pages/cart/cart.component';
 import { PromoComponent } from './pages/promo/promo.component';
-
-
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { LightgalleryModule } from 'lightgallery/angular';
+import { SwiperModule } from 'swiper/angular';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { PromoComponent } from './pages/promo/promo.component';
     ProductComponent,
     CartComponent,
     PromoComponent,
+    ProductDetailComponent,
 
 
   ],
@@ -37,7 +39,9 @@ import { PromoComponent } from './pages/promo/promo.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    RouterModule
+    RouterModule,
+    LightgalleryModule,
+    SwiperModule
 
 
   ],

@@ -5,7 +5,7 @@ const menuUp: Array<TypeMenu> = [
   {
     icon: faBookmark,
     name: 'Khuyến mãi',
-    link: 'khuyen-mai'
+    link: '/khuyen-mai'
 
   },
   {

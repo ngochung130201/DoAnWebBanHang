@@ -1,0 +1,35 @@
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lightgallery.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lg-zoom.css');
+
+.productTitle {
+  @apply font-medium text-sm text-color-main;
+}
+.swiper {
+  width: 100%;
+
+}
+.swiper-button-prev{
+  opacity: 0 !important;
+}
+.swiper-button-next {
+
+  opacity: 0
+}
+
+.showNavigator:hover {
+  .swiper-button-prev{
+    transition: all ease-in 0.3s;
+    opacity: 1 !important;
+  }
+  .swiper-button-next {
+    transition: all ease-in 0.3s;
+    opacity: 1
+  }
+
+}
+.btn-product {
+  @apply   uppercase text-center h-[3rem] w-[15rem] rounded-md font-medium
+}

@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="pt-40">
-  <div class="fade  hidden lg:block " *ngIf="images && images.length > 0 " class="silder">
+  <!-- <div class="fade  hidden lg:block " *ngIf="images && images.length > 0 " class="silder">
     <img *ngFor="let image of images;let i = index " [ngClass]="{'image-active' : selectIndex=== i}" [src]="image.url"
       [alt]="image.alt" class="object-contain">
     <div class="carousel-dot-container">
@@ -21,7 +21,14 @@
         </button>
       </div>
     </div>
-  </div>
+  </div> -->
+  <swiper (swiper)="setSwiperInstance($event)" [slidesPerView]="1" [navigation]="true"
+    [scrollbar]=" { draggable: true }" [pagination]="{ clickable: true } " [loop]="true">
+    <ng-template swiperSlide *ngFor="let image of images">
+      <img [src]="image.url" alt="" class="swiper-img">
+    </ng-template>
+
+  </swiper>
   <div class="flex flex-col justify-center items-center bg-[#F8F8FC]">
     <section class=" min-h-screen body-font text-gray-600 sm:px-3 lg:px-40 ">
       <div class="container mx-auto px-5 py-10">

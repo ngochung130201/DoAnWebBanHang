@@ -13,6 +13,7 @@ SwiperCore.use([Navigation, Pagination]);
 })
 export class HomeComponent implements OnInit {
   selectIndex = 0;
+
   indicators = true;
   @Input() autoSilde = false;
   slideInteval = 3000;

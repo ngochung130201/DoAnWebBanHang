@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { faBell, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faBars, faCartShopping, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { itemFooter } from '../footer/footer.data';
@@ -16,6 +16,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  ngAfterViewInit(): void {
+    document.onclick = (args: any): void => {
+      if (args.target.tagName === 'BODY') {
+        this.closeMenu()
+      }
+    }
+  }
+  isMenu: boolean = false;
   menuUp = menuUp;
   authIcon = faUser;
   searchIcon = faSearch;
@@ -23,9 +31,27 @@ export class HeaderComponent implements OnInit {
   menuIcon = faBars;
   cartIcon = faCartShopping;
   isMobieHiden = true;
+  faBar = faBars
   handleMenuMoibe() {
     this.isMobieHiden = !this.isMobieHiden;;
 
   }
+
+  isOpenedList: any;
+
+  openMenu(source: any, isMenu: boolean) {
+    this.isMenu = !isMenu;
+    if (this.isMenu) {
+      this.isOpenedList = source;
+    }
+    else {
+      this.closeMenu()
+    }
+  }
+  closeMenu() {
+    this.isOpenedList = -1;
+  }
+
+
 
 }

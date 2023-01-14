@@ -12,12 +12,17 @@ export class CartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.callPrice()
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    this.callPrice()
+  }
+  callPrice() {
+
     this.sumMoney = this.sumProduct().toLocaleString('it-IT', { style: 'currency', currency: 'VND' }).toString();
 
   }
-  ngOnChanges(changes: SimpleChanges) {
-    this.sumMoney = this.sumProduct().toLocaleString('it-IT', { style: 'currency', currency: 'VND' }).toString();
-  }
+  isChecked: boolean = true;
   isDisable: boolean = false;
   listProductCart: Array<TyCart> = [
     {
@@ -28,7 +33,8 @@ export class CartComponent implements OnInit {
       price: 2100020,
       priceDiscount: 2100020,
       intoMoney: 2100020,
-      sumMoney: 8
+      sumMoney: 8,
+      checked: true,
     },
     {
       id: '2',
@@ -38,7 +44,8 @@ export class CartComponent implements OnInit {
       price: 4500000,
       priceDiscount: 4500000,
       intoMoney: 1500000,
-      sumMoney: 15
+      sumMoney: 15,
+      checked: true
     },
     {
       id: '3',
@@ -48,7 +55,8 @@ export class CartComponent implements OnInit {
       price: 1500000,
       priceDiscount: 1500000,
       intoMoney: 2500000,
-      sumMoney: 15
+      sumMoney: 15,
+      checked: true
     },
     {
       id: '4',
@@ -58,13 +66,22 @@ export class CartComponent implements OnInit {
       price: 1760000,
       priceDiscount: 1760000,
       intoMoney: 1500000,
-      sumMoney: 15
+      sumMoney: 15,
+      checked: true
     }
   ];
   bookMarkIcon: IconDefinition = faBookmark;
   nextIcon: IconDefinition = faChevronRight;
   sumMoney: string | number = '0';
   intoMoney: number | string = 0;
+  // kiem tra checked
+  checkCheckBoxvalue(event: any): boolean {
+    console.log(this.isChecked);
+    console.log(event.target.checked);
+    console.log(this.sumProduct());
+    return this.isChecked = event.target.checked
+
+  }
   // Hàm tăng số lượng
   countUp(id: string, priceDiscount: number) {
     this.listProductCart.map((cart): any => {
@@ -77,10 +94,16 @@ export class CartComponent implements OnInit {
 
         cart.intoMoney = countUp * priceDiscount
       }
+
+
+
     })
+    if (this.isChecked) {
+      this.callPrice()
+    }
 
 
-    this.sumMoney = this.sumProduct().toLocaleString('it-IT', { style: 'currency', currency: 'VND' }).toString();
+
 
 
 
@@ -92,6 +115,7 @@ export class CartComponent implements OnInit {
 
       sum += item.intoMoney;
     })
+
     return sum;
   }
   //  hàm giảm số lượng
@@ -111,7 +135,7 @@ export class CartComponent implements OnInit {
       }
 
     })
-    this.sumMoney = this.sumProduct().toLocaleString('it-IT', { style: 'currency', currency: 'VND' }).toString();
+
   }
 
   showModal = false;

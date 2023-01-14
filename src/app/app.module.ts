@@ -17,6 +17,7 @@ import { PromoComponent } from './pages/promo/promo.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { SwiperModule } from 'swiper/angular';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { SwiperModule } from 'swiper/angular';
     CartComponent,
     PromoComponent,
     ProductDetailComponent,
+    TabsComponent,
 
 
   ],

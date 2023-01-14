@@ -1,5 +1,13 @@
 <app-header></app-header>
-<div class="px-2 py-2  pt-40 lg:px-[9rem]">
+
+<div class="px-2 py-2 mt-12 pt-40 lg:px-[9rem]">
+  <swiper class=" showNavigator" (swiper)="setSwiperInstance($event)" [slidesPerView]="1" [navigation]="true"
+    [scrollbar]=" { draggable: true }" [pagination]="{ clickable: true } " [loop]="true">
+    <ng-template swiperSlide *ngFor="let image of images">
+      <img [src]="image.url" alt="" class="swiper-img">
+    </ng-template>
+
+  </swiper>
   <div class="mt-10">
     <div class="flex justify-center font-bold text-3xl">
       KHUYẾN MÃI HOT

@@ -23,10 +23,122 @@
             </div>
 
             <div class="hidden sm:flex sm:items-center">
-              <a routerLink="/san-pham" class="text-gray-800 text-sm  hover:text-[#1435c3] mr-4">Sản phẩm</a>
+              <!-- <a routerLink="/san-pham" class="text-gray-800 text-sm  hover:text-[#1435c3] mr-4">Sản phẩm</a>
               <a href="#" class="text-gray-800 text-sm  hover:text-[#1435c3] mr-4">Marketplace</a>
               <a href="#" class="text-gray-800 text-sm  hover:text-[#1435c3] mr-4">Partners</a>
-              <a href="#" class="text-gray-800 text-sm  hover:text-[#1435c3]">Pricing</a>
+              <a href="#" class="text-gray-800 text-sm  hover:text-[#1435c3]">Pricing</a> -->
+              <div class="">
+                <div class="container flex justify-center ">
+                  <div class="">
+                    <!-- Code block starts -->
+                    <div class="relative px-2   " (click)="openMenu(1,isMenu)">
+                      <div
+                        class="bg-white w-[207px] h-[35px] flex justify-between items-center border border-solid border-[#e0e0e0] rounded  cursor-pointer"
+                        data-menu>
+                        <div class="flex items-center">
+                          <div class="  items-center flex rounded-r border-[#e0e0e0]">
+                            <div class="cursor-pointer text-color-main mx-3">
+                              <fa-icon [icon]="faBar"></fa-icon>
+
+                              <!-- <svg (click)="closeMenu()" xmlns="http://www.w3.org/2000/svg"
+                                [ngClass]="isOpenedList === 1 ? ' icon icon-tabler icon-tabler-chevron-down ' : ' hidden'"
+                                width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <polyline points="6 15 12 9 18 15" />
+                              </svg> -->
+                            </div>
+                          </div>
+                          <p class=" text-[#82869e] pt-3 px-2">
+                            Danh mục sản phẩm</p>
+                        </div>
+
+                      </div>
+                      <ul
+                        [ngClass]="isOpenedList === 1 ? 'visible transition duration-300 opacity-100 bg-white  shadow rounded mt-2 py-1 w-48 absolute':'hidden'">
+                        <li
+                          class="cursor-pointer text-color-main text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-book" width="16"
+                            height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                            <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                            <line x1="3" y1="6" x2="3" y2="19" />
+                            <line x1="12" y1="6" x2="12" y2="19" />
+                            <line x1="21" y1="6" x2="21" y2="19" />
+                          </svg>
+                          <a routerLink="/san-pham" class="ml-2 font-normal">PC - Phụ kiện</a>
+                        </li>
+                        <li
+                          class="cursor-pointer text-color-main  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard"
+                            width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <path d="M9 5H7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2V7a2 2 0 0 0 -2 -2h-2" />
+                            <rect x="9" y="3" width="6" height="4" rx="2" />
+                          </svg>
+                          <span class="ml-2 font-normal">
+
+                            Game & Stream
+                          </span>
+                        </li>
+                        <li
+                          class="cursor-pointer text-color-main  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-compass"
+                            width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <polyline points="8 16 10 10 16 8 14 14 8 16" />
+                            <circle cx="12" cy="12" r="9" />
+                          </svg>
+                          <span class="ml-2 font-normal">Điện thoại & phụ kiện</span>
+                        </li>
+
+                        <li
+                          class="cursor-pointer text-color-main  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-mobile"
+                            width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <rect x="7" y="4" width="10" height="16" rx="1" />
+                            <line x1="11" y1="5" x2="13" y2="5" />
+                            <line x1="12" y1="17" x2="12" y2="17.01" />
+                          </svg>
+                          <span class="ml-2">Máy ảnh - Máy quay phim</span>
+                        </li>
+                        <li
+                          class="cursor-pointer text-color-main  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="16"
+                            height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+                            <circle cx="9" cy="9" r="2" />
+                          </svg>
+                          <span class="ml-2">Thiết bị âm thanh</span>
+                        </li>
+                        <li
+                          class="cursor-pointer text-color-main  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="16"
+                            height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                          </svg>
+                          <span class="ml-2">Sign Out</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- Code block ends -->
+                  </div>
+                </div>
+              </div>
+
+
+
               <div class="flex ml-1">
                 <input type="text"
                   class="w-[478px] px-[6px] py-[12px] rounded outline-none bg-[#f5f5f5] text-[#33333] leading-5 border border-solid border-[#eaeaea]"

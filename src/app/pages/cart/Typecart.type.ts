@@ -5,6 +5,7 @@ type TyCart = {
   amount: number,
   priceDiscount: number,
   price: number,
+  checked: boolean,
   intoMoney: number,
   sumMoney: number
 }

@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TyPromo } from './promo.type';
-
+import SwiperCore, { Navigation, Pagination, Swiper } from 'swiper';
+import { setSwiperInstance } from '../../helper/autoPlay'
+import swiper from 'swiper';
+// install Swiper modules
+SwiperCore.use([Navigation, Pagination]);
 @Component({
   selector: 'app-promo',
   templateUrl: './promo.component.html',
-  styleUrls: ['./promo.component.scss']
+  styleUrls: ['./promo.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PromoComponent implements OnInit {
 
@@ -12,6 +17,37 @@ export class PromoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  images = [
+
+    {
+      url:
+        'https://lh3.googleusercontent.com/ZQQmpDCHlyC2c2fC5QY2BcDQ0F0UhZMK6A0r1mE0sUGskENaJM8PCD6FcazTaTtQOjtLN_k9CLX3FfAf4YqoBxDPqZQKg6A=rw-w1232',
+      alt: 'nature2',
+    },
+    {
+      url:
+        'https://lh3.googleusercontent.com/vxKwOtHwYulGicB4w4clb3YA4pEzlTBj21Xy_Msqd1pVvuUvoJfoACUWBeyg2gb5iu_m2N02FgU2TXm_0Cw4Spv7WKWX_vvN=rw-w2048',
+      alt: 'nature2',
+    },
+
+    {
+      url:
+        'https://lh3.googleusercontent.com/6cWTMPs-sEhGY0YiB7XIUlbn8_bQINU0z-jkPadeJMQPfLHkuLTgID2i16t7AnyGTm7Loc88dQuSXPGQqGyuAS7uCO3VXPo7=rw-w1232',
+      alt: 'nature2',
+    },
+    {
+      url:
+        'https://lh3.googleusercontent.com/ed-EUWrquTiAilMCiELWxMAbdeI8U1R9qFLvn9ahBL_jte6mB1n2JTOwm1xLggWHfc1CM9VIX4zTxoMdrDYFqFmzmpQqohg=rw-w1232',
+      alt: 'nature2',
+    },
+    {
+      url:
+        'https://lh3.googleusercontent.com/toBmEr-xIlRPaWaYNDcnjuPapgSihWllIIZBERG_ySRjDdgWwrCX-M7fEeLSkcnHw81IK6JpGoOrPf1-GprV2MZr1Su7QMdD=rw-w1232',
+      alt: 'nature2',
+    },
+
+
+  ]
   listPromo: Array<TyPromo> = [{
     id: '1',
     image: 'https://lh3.googleusercontent.com/fyvevQRxfSSiCjI9VUYKdKc9D5vof5K01e8DRgk2BsLDKe9YDLP_3IwB8H7CX6FVdo6rV-DhmNTMb6F1vJRrbL751fZRIDQmGA=rw-w523',
@@ -62,5 +98,11 @@ export class PromoComponent implements OnInit {
   }
 
   ]
+
+  setSwiperInstance = (swiper: Swiper) => {
+    setInterval(() => {
+      swiper.slideNext();
+    }, 3000);
+  }
 
 }

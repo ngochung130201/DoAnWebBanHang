@@ -1,0 +1,340 @@
+<app-header></app-header>
+<div class="px-2 py-2  pt-40 lg:px-[9rem]">
+  <div class="mt-10 flex flex-wrap gap-8">
+    <div class="w-2/3 ">
+      <div class="flex">
+        <div class="">
+          <lightgallery class="w-full">
+            <a data-lg-size="480-475-480, 800-791-800, 1406-1390" class="gallery-item"
+              data-src="https://lh3.googleusercontent.com/PjhHXXreUCNNLITAJ3gfR2heYwi7JRjbjIwC4Rh-zDi8cUqQT0CoVQVQ0WzoOuKG487h__xpEZQ_zQDXfWvRWWrKDYFSmc0wZA=w500-rw"
+              data-responsive="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800"
+              data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@entrycube' >Diego Guzmán </a></h4> <p> Location - <a href='https://unsplash.com/s/photos/fushimi-inari-taisha-shrine-senbontorii%2C-68%E7%95%AA%E5%9C%B0-fukakusa-yabunouchicho%2C-fushimi-ward%2C-kyoto%2C-japan'>Fushimi Ward, Kyoto, Japan</a></p>">
+              <img class="img-responsive w-[327px]"
+                src="https://lh3.googleusercontent.com/PjhHXXreUCNNLITAJ3gfR2heYwi7JRjbjIwC4Rh-zDi8cUqQT0CoVQVQ0WzoOuKG487h__xpEZQ_zQDXfWvRWWrKDYFSmc0wZA=w500-rw" />
+            </a>
+          </lightgallery>
+          <lightgallery class="flex gap-2" [settings]="settings" [onBeforeSlide]="onBeforeSlide">
+            <a data-lg-size="480-475-480, 800-791-800, 1406-1390" class="gallery-item"
+              data-src="https://lh3.googleusercontent.com/PjhHXXreUCNNLITAJ3gfR2heYwi7JRjbjIwC4Rh-zDi8cUqQT0CoVQVQ0WzoOuKG487h__xpEZQ_zQDXfWvRWWrKDYFSmc0wZA=w500-rw"
+              data-responsive="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800"
+              data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@entrycube' >Diego Guzmán </a></h4> <p> Location - <a href='https://unsplash.com/s/photos/fushimi-inari-taisha-shrine-senbontorii%2C-68%E7%95%AA%E5%9C%B0-fukakusa-yabunouchicho%2C-fushimi-ward%2C-kyoto%2C-japan'>Fushimi Ward, Kyoto, Japan</a></p>">
+              <img class="img-responsive w-[50px] h-[50px]"
+                src="https://lh3.googleusercontent.com/PjhHXXreUCNNLITAJ3gfR2heYwi7JRjbjIwC4Rh-zDi8cUqQT0CoVQVQ0WzoOuKG487h__xpEZQ_zQDXfWvRWWrKDYFSmc0wZA=w500-rw" />
+            </a>
+            <a data-lg-size="480-480-480, 800-800-800, 1400-1400" data-pinterest-text="Shinimamiya, Osaka, Japan"
+              data-tweet-text="Shinimamiya, Osaka, Japan" class="gallery-item"
+              data-src="https://images.unsplash.com/photo-1544550285-f813152fb2fd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+              data-responsive="https://images.unsplash.com/photo-1544550285-f813152fb2fd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1544550285-f813152fb2fd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800"
+              data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@asoshiation' >Shah </a></h4><p> Location - <a href='https://unsplash.com/s/photos/shinimamiya%2C-osaka%2C-japan'>Shinimamiya, Osaka, Japan</a></p>">
+              <img class="img-responsive  w-[50px] h-[50px]"
+                src="https://lh3.googleusercontent.com/PjhHXXreUCNNLITAJ3gfR2heYwi7JRjbjIwC4Rh-zDi8cUqQT0CoVQVQ0WzoOuKG487h__xpEZQ_zQDXfWvRWWrKDYFSmc0wZA=w500-rw" />
+            </a>
+            <a data-lg-size="480-480-480, 800-800-800, 1400-1400" data-pinterest-text="Pin it3"
+              data-tweet-text="share on twitter 4" class="gallery-item"
+              data-src="https://images.unsplash.com/photo-1584592740039-cddf0671f3d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+              data-responsive="https://images.unsplash.com/photo-1584592740039-cddf0671f3d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1584592740039-cddf0671f3d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800"
+              data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@katherine_xx11' >Katherine Gu </a></h4><p> For all those years we were alone and helpless.</p>">
+              <img class="img-responsive  w-[50px] h-[50px]"
+                src="https://lh3.googleusercontent.com/PjhHXXreUCNNLITAJ3gfR2heYwi7JRjbjIwC4Rh-zDi8cUqQT0CoVQVQ0WzoOuKG487h__xpEZQ_zQDXfWvRWWrKDYFSmc0wZA=w500-rw" />
+            </a>
+          </lightgallery>
+        </div>
+        <div class="">
+          <div class="text-2xl font-medium">
+            Laptop Lenovo IdeaPad 3 15IAU7 (i3-1215U/RAM 8GB/512GB SSD/ Windows 11)
+          </div>
+          <div class="flex text-[#82869e] mt-1">
+            <div class="pr-2">Thương hiệu <span class="text-color-primary">HP</span>
+              <span>|</span>
+            </div>
+            <div class="pr-2">SKU: 1200132
+              <span>|</span>
+            </div>
+            <span>Mã vạch: 200132</span>
+          </div>
+          <span class="text-xs text-[#f78212]">Chỉ còn 3 sản phẩm</span>
+          <span class="text-color-primary font-bold text-xl block">335000đ</span>
+          <div class="mt-16">
+            <button class="bg-color-primary text-white btn-product mr-2">Mua ngay</button>
+            <a routerLink="/gio-hang"
+              class="text-white p-4  bg-color-primary  btn-product border border-solid border-color-main">Thêm
+              vào
+              giỏ
+              hàng</a>
+          </div>
+          <div class="mt-12">
+            <div>
+              <span class="text-color-main font-bold text-sm mb-2">Khuyến mãi liên quan</span>
+              <ul class="list-disc ml-8">
+                <li class="mb-2">Trả góp 6 tháng lãi suất 0% với đơn hàng >3tr <a href="/">Xem chi tiết</a> </li>
+                <li>Nhập mã <b>VNPAYPV</b>
+                  <ul class="">
+                    <li>- Tặng ngay <span class="text-[#FF0000] font-medium">100.000đ</span> cho mỗi giao dịch thành
+                      công
+                      từ
+                      4,000,000đ</li>
+                    <li>- Tặng ngay <span class="text-[#FF0000]">100.000đ</span> cho mỗi giao dịch thành công từ
+                      4,000,000đ</li>
+                    <li>- Tặng ngay <span class="text-[#FF0000]">100.000đ</span> cho mỗi giao dịch thành công từ
+                      4,000,000đ </li>
+
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="1/3">
+      <div class="flex gap-2 text-[#53c305] fill-[#000000] text-sm">
+        <fa-icon [icon]="freeShip"></fa-icon>
+        <span>Sản phẩm được miễn phí giao hàng</span>
+      </div>
+      <div class="mt-8 ">
+        <div class="mb-8" *ngFor="let service of listService">
+          <span class="productTitle">{{service.title}}</span>
+          <ul *ngFor="let item of service.items">
+            <li class="flex gap-3 mb-3 mt-3">
+              <fa-icon class="text-[#1435c3]" [icon]="item.icon"></fa-icon>
+              <span>{{item.text}}</span>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- mo ta san pham -->
+  <div class="flex flex-wrap mr-[2px] justify-between mt-16 mb-16">
+    <div class="w-2/3">
+      <div class="text-xl font-bold">Mô tả sản phẩm</div>
+      <p>Mô tả sản phẩm sẽ được cập nhật trong thời gian sớm nhất !
+
+        Laptop Lenovo IdeaPad 3 15IAU7 - 82RK001NVN một thiết bị phù hợp cho những ai đang tìm kiếm một chiếc laptop có
+        thể xử lý được nhanh chóng các tác vụ công việc văn phòng hay học tập. Thiết kế nhỏ gọn, bộ vi xử lý Intel Core
+        i3 mang lại hiệu năng ổn định hứa hẹn sẽ là một sản phẩm được đa số người dùng ưa thích.
+        Laptop Lenovo IdeaPad 3 15IAU7 - 82RK001NVN
+        Thiết kế nhỏ gọn tính linh động cao, màu sắc thời thượng
+        Laptop Lenovo IdeaPad 3 mang một thiết kế tối giản nhưng vẫn mang vẻ đẹp tinh tế phù hợp với nhiều đối tượng
+        khách hàng. Sản phẩm nhà Lenovo đề cao tính cơ động khi có khối lượng chỉ 1.63kg và kích thước 35.92 x 23.65 x
+        1.99cm khá nhỏ gọn giúp cho người dùng dễ dàng mang theo bên mình để học tập và làm việc.
+
+        Laptop Lenovo IdeaPad 3 15IAU7 - 82RK001NVN | Gam màu xanh thời thượng
+        Laptop Lenovo sẽ làm bạn ấn tượng ngay từ ánh nhìn đầu tiên với tông màu xanh thời thượng, cùng logo thương hiệu
+        được điêu khắc tỉ mỉ ở giữa thân máy. Phần vỏ máy được cấu tạo từ chất liệu cao cấp cùng thiết kế nhám giúp bạn
+        thoải mái cầm nắm và mang lại độ bền bỉ nhất định cho laptop.
+
+        CPU Intel Core i3 cho hiệu năng ổn định, làm việc giải trí đỉnh cao với chip đồ họa Intel UHD Graphics
+        Laptop Lenovo IdeaPad 3 được trang bị bộ vi xử lý Intel Core i3-1215U thế hệ thứ 12 với cấu trúc 6 nhân, 8 luồng
+        giúp tiết kiệm tối thiểu điện năng. Dòng chip này còn sở hữu tốc độ xung nhịp tối đa lên đến 4.4GHz cùng bộ nhớ
+        đệm 10MB cho khả năng xử lý nhanh chóng các tác vụ hàng ngày của bạn.
+
+        Laptop Lenovo IdeaPad 3 15IAU7 - 82RK001NVN | Hiệu năng
+        Bên cạnh đó, laptop nhà Lenovo còn được tích hợp thêm chip đồ họa Intel UHD Graphics cho phép xử lý mượt mà các
+        tác vụ đồ họa cơ bản, bạn cũng có thể trải nghiệm một vài tựa game giải trí có cấu hình thấp trên laptop này.
+
+        RAM 8GB Onboard DDR4 3200MHz, ổ cứng chuẩn SSD 512GB
+        Lenovo 15IAU7 - 82RK001NVN được nhà sản xuất trang bị RAM 8GB chuẩn DDR4 cùng tốc độ bus 3200MHz mang đến khả
+        năng đa nhiệm ấn tượng, xử lý cùng lúc nhiều tác vụ mà không bị gián đoạn do tình trạng giật lag. Ngoài ra,
+        laptop còn hỗ trợ tối đa 16GB mở rộng thêm không gian làm việc cho người dùng.
+
+        Laptop Lenovo IdeaPad 3 15IAU7 - 82RK001NVN | Bộ nhớ
+        Ổ cứng chuẩn SSD với dung lượng 512GB vừa mang đến khả năng lưu trữ rộng lớn mà còn đồng thời rút ngắn được thời
+        gian khởi động máy và truy cập các dữ liệu, phần mềm. Từ đó giúp sản phẩm cải thiện được tốc độ phản hồi nâng
+        cao được hiệu quả làm việc, học tập của bạn.
+
+        Khả năng hiển thị tối ưu, màn hình hỗ trợ chống lóa
+        IdeaPad 3 sở hữu màn hình hiển thị có kích thước lên đến 15.6 inch 1920 x 1080px cùng các cạnh viền mỏng mang
+        đến hình ảnh sắc nét cùng khả năng hiển thị tối ưu. Tấm nền TN được tích hợp mang lại những khung hình sắc nét
+        với màu sắc sống động cho những trải nghiệm hình ảnh tuyệt vời.
+
+
+        Hơn nữa, laptop Lenovo còn sở hữu công nghệ chống chói Anti-glare dù sử dụng trong điều kiện ánh sáng mặt trời
+        nhưng vẫn đảm bảo chất lượng hiển thị. HD webcam được lắp đặt trên viền màn hình cho phép các hoạt động gọi
+        video được diễn ra dễ dàng với góc nhìn rộng và hình ảnh sắc nét.
+
+        Dung lượng pin 3 cell 45 Wh, hệ điều hành mới Windows 11 Home
+        Laptop IdeaPad 3 15IAU7 sử dụng viên pin liền với dung lượng 3 cell 45Wh vừa đảm bảo được kích thước nhỏ gọn mà
+        còn mang lại thời gian sử dụng lâu dài. Sạc nhanh được trang bị giúp laptop nhanh chóng nạp năng lượng giúp bạn
+        nhanh chóng trở lại công việc qua mỗi lần sạc.
+
+        Laptop Lenovo IdeaPad 3 15IAU7 - 82RK001NVN | Pin
+        Laptop này còn được cài đặt sản hệ điều hành mới Windows 11 Home. Đây được biết đến là một hệ điều hành mới
+        có khả năng cung cấp cho người dùng giao diện làm việc hiện đại cùng vô vàn tiện ích cần thiết khác.
+
+        Laptop Lenovo IdeaPad 3 15IAU7 - 82RK001NVN | Win 11
+        Bàn phím êm ái với cụm phím số, Touchpad mượt mà bảo mật vân tay
+        Lenovo IdeaPad được trang bị bàn phím Full size với cụm phím số giúp cho quá trình nhập liệu dễ dàng hơn. Các
+        phím có độ nhạy cao giúp cho thao tác gõ phím được thực hiện chuẩn xác.
+
+        Laptop Lenovo IdeaPad 3 15IAU7 - 82RK001NVN | Bàn phím
+        Touchpad của laptop được thiết kế với kích thước rộng rãi, có độ nhạy cao, thao tác chính xác. Ngoài ra, trên
+        touchpad còn được trang bị thêm bảo mật vân tay, giúp quá trình khởi động máy dễ dàng hơn và các dữ liệu cá nhân
+        được bảo vệ an toàn.
+
+        Đầy đủ các cổng tiện ích, kết nối không dây dễ dàng
+        Tuy được thiết kế với bề ngoài nhỏ gọn nhưng laptop Lenovo vẫn được trang bị đầy đủ các cổng giao tiếp phổ biến.
+        Bao gồm các cổng như cổng xuất hình HDMI, các cổng kết nối USB Type C/ DisplayPort/ Data/ Power Delivery, USB
+        3.2, USB 2.0, SD card slot cho khả năng kết nối với nhiều thiết bị ngoại vi tương thích và truyền tải dữ liệu.
+
+        Laptop Lenovo IdeaPad 3 15IAU7 - 82RK001NVN | Cổng kết nối
+        Ngoài ra, máy còn có kết nối không dây WiFi 802.11ac cung cấp đường truyền internet ổn định và Bluetooth 5.0
+        cho khả năng truyền tải dữ liệu, kết nối không dây với các thiết bị ngoại vi khác, đáp ứng đầy đủ các nhu cầu
+        của người dùng.
+
+        Mua laptop Lenovo IdeaPad 3 15IAU7 - 82RK001NVN chính hãng tại Phong Vũ | Bảo hành dài hạn 24 tháng
+        Laptop Lenovo IdeaPad 3 15IAU7 - 82RK001NVN sở hữu vẻ ngoài tinh tế, sang trọng cùng cấu hình ổn định sẽ là một
+        lựa chọn tối ưu trong phân khúc. Hiện sản phẩm đang được phân phối chính hãng tại Phong Vũ với chính sách bảo
+        hành dài hạn và giá cả hợp lý.
+      </p>
+    </div>
+    <div class="w-1/3">
+      <div class="text-xl font-bold">Thông tin chi tiết</div>
+      <div class="flex flex-col ">
+        <div class="flex justify-between mt-3 mb-3">
+          <span>Thương hiệu</span>
+          <span>HP</span>
+        </div>
+
+        <div class="flex justify-between mt-3 mb-3">
+          <span>Thương hiệu</span>
+          <span>HP</span>
+        </div>
+        <div class="text-[#82869e] font-bold text-sm">Thông tin chung</div>
+        <div class="flex justify-between mt-3 mb-3">
+          <span>Thương hiệu</span>
+          <span>HP</span>
+        </div>
+        <div class="flex justify-between mt-3 mb-3">
+          <span>Thương hiệu</span>
+          <span>HP</span>
+        </div>
+        <div class="flex justify-between mt-3 mb-3">
+          <span>Thương hiệu</span>
+          <span>HP</span>
+        </div>
+        <div class="text-[#82869e] font-bold text-sm">Thông tin chung</div>
+        <div class="flex justify-between mt-3 mb-3">
+          <span>Thương hiệu</span>
+          <span>HP</span>
+        </div>
+        <div class="flex justify-between mt-3 mb-3">
+          <span>Thương hiệu</span>
+          <span>HP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end mo ta san pham -->
+  <!-- binh luan -->
+  <div class="w-2/3 bg-white p-2 pt-4 rounded shadow-lg">
+    <div class="flex ml-3">
+      <div class="mr-3">
+        <img src="http://picsum.photos/50" alt="" class="rounded-full">
+      </div>
+      <div>
+        <h1 class="font-semibold">Huỳnh Ngọc Hưng</h1>
+        <p class="text-xs text-gray-500">2 giây trước</p>
+      </div>
+
+    </div>
+
+    <div class="mt-3 p-3 w-full">
+      <textarea #commentInput rows="3" class="border p-2 rounded w-full"
+        placeholder="Mời bạn để bình luận..."></textarea>
+    </div>
+
+    <div class="flex justify-between mx-3">
+      <div><button class="px-4 py-2 bg-color-primary  text-white rounded font-light hover:bg-color-primary">Bình
+          luận</button>
+      </div>
+
+    </div>
+    <!-- component -->
+
+    <div class="bg-white   px-10 py-8  ">
+
+      <div class="mt-4">
+
+        <div class="flex mt-2">
+          <svg xmlns="http://picsum.photos/50" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg xmlns="http://picsum.photos/50" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20"
+            fill="currentColor">
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20"
+            fill="currentColor">
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        </div>
+        <p class="mt-4 text-md text-gray-600">Quá hay luôn</p>
+        <div class="flex justify-between items-center">
+          <div class="mt-4 flex items-center space-x-4 py-6">
+            <div class="">
+              <img class="w-12 h-12 rounded-full" src="http://picsum.photos/50" alt="" />
+            </div>
+            <div class="text-sm font-semibold">Huỳnh Ngọc Hưng<span class="font-normal ml-2">5 giây trước</span></div>
+          </div>
+          <div
+            class="p-6 bg-color-primary  rounded-full h-4 w-4 flex items-center justify-center text-2xl text-white mt-4 shadow-lg cursor-pointer">
+            <button (click)="commentInput.focus()">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- end binh luan -->
+  <div class="transition-all ease-in-out showNavigator mt-6">
+    <div class="flex items-center justify-between text-sm ">
+      <div class="text-xl font-bold">Cùng thương hiệu HP</div>
+      <a href="/" class="text-[#82869e]">Xem tất cả
+        <fa-icon [icon]="faRight"></fa-icon>
+      </a>
+    </div>
+    <swiper (swiper)="setSwiperInstance($event)" (mouseover)="showNavigation()" [slidesPerView]="5" [spaceBetween]="20"
+      [navigation]="true" [loop]="true" [scrollbar]=" { draggable: true }">
+
+      <ng-template swiperSlide class="w-full border border-solid border-[#eeeeee] p-4 md:w-1/2  lg:w-1/5"
+        *ngFor="let product of listProduct">
+        <a routerLink="/chi-tiet-san-pham" class="relative block h-48 overflow-hidden rounded">
+          <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer"
+            src="{{product.image}}" />
+        </a>
+        <div class="mt-4">
+          <a href="">
+            <h3 class=" mb-1 text-xs tracking-widest text-gray-500">{{product.brand}}</h3>
+            <div class=" text-xs font-medium text-gray-900">{{product.name}}</div>
+            <div class="flex justify-between">
+              <div>
+                <p class="mt-1 text-color-primary font-bold">{{product.percentPrice}}đ</p>
+                <div class="flex">
+                  <p class="mt-1 line-through">{{product.price}}đ</p>
+                  <p class="text-color-primary">-{{product.reducedPrice}}%</p>
+                </div>
+              </div>
+              <div *ngIf="product.freeShip">
+                <fa-icon class="text-sm text-[#30cd60]" [icon]="freeShip"></fa-icon>
+              </div>
+            </div>
+          </a>
+        </div>
+      </ng-template>
+    </swiper>
+  </div>
+</div>
+<!-- home.page.html -->
+
+
+<app-footer></app-footer>

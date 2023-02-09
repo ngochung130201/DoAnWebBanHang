@@ -2,11 +2,14 @@
 
 
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
+@tailwind components;
 // global.scss
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Importing Bootstrap SCSS file. */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

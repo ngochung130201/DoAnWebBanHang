@@ -2,7 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { faFacebook, faFacebookF, faGoogle, IconDefinition, faFacebookMessenger } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faCircleChevronUp, faLocation, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { MyArrayTypeButton } from './components/login/login.component';
+
 type TyContact = {
   id: string,
   icon: IconDefinition,

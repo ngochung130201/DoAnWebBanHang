@@ -27,6 +27,9 @@ const routes: Routes = [
   },
   {
     path: 'gio-hang', component: CartComponent
+  },
+  {
+    path: 'khuyen-mai', component: PromoComponent
   }
 ];
 

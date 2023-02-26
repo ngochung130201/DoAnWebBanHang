@@ -23,22 +23,31 @@ export class MenuDeleteComponent implements OnInit {
   id: string = '';
   listMenu: Array<TypeMenus> = [];
 
-  handleDelete() {
-    this.id = this.data.id;
-
-    this.MenuService.deleteMenu(this.id).subscribe(
-
-    )
-  }
-
   reloadCurrentRoute() {
-    this.handleDelete()
-    this.toast.success({ detail: 'Thành công', summary: 'Xóa thành công', duration: 4000 })
+    // this.handleDelete()
     let currentUrl = this.router.url;
     this.router.navigateByUrl('http://localhost:4200/admin/menu', { skipLocationChange: true }).then(() => {
+      // this.toast.success({ detail: 'Thành công', summary: 'Xóa thành công', duration: 4000 })
       this.router.navigate([currentUrl]);
     });
   }
 
+
+  handleDelete() {
+    this.id = this.data.id;
+
+    this.MenuService.deleteMenu(this.id).subscribe(
+      {
+        next: (data => {
+          this.toast.success({ detail: 'Thành công', summary: 'Xóa thành công', duration: 4000 })
+          this.reloadCurrentRoute()
+        }),
+        error: (err => {
+
+        })
+      }
+
+    )
+  }
 
 }

@@ -15,7 +15,7 @@ export class SuppliersDeleteComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: TypeDeleteSuppliers, private SuppliersService: SuppliersService, private router: Router, private toast: NgToastService) { }
 
   ngOnInit(): void {
-    this.handleDelete()
+
 
   }
   SuppliersID: string = '';
@@ -25,15 +25,23 @@ export class SuppliersDeleteComponent implements OnInit {
     this.SuppliersID = this.data.SuppliersID;
     console.log(this.SuppliersID);
     this.SuppliersService.deleteSuppliers(this.SuppliersID).subscribe(
-
+      {
+        next: (data => {
+          this.toast.success({ detail: 'Thành công', summary: 'Xóa thành công', duration: 4000 })
+          this.reloadCurrentRoute();
+        }),
+        error: (err => {
+          this.toast.error({ detail: 'Thất bại', summary: 'Có lỗi xảy ra vui lòng kiểm tra lại !', duration: 4000 })
+        })
+      }
     )
   }
 
   reloadCurrentRoute() {
-    this.handleDelete()
-    this.toast.success({ detail: 'Thành công', summary: 'Xóa thành công', duration: 4000 })
+
     let currentUrl = this.router.url;
     this.router.navigateByUrl('http://localhost:4200/admin/suppliers', { skipLocationChange: true }).then(() => {
+
       this.router.navigate([currentUrl]);
     });
   }

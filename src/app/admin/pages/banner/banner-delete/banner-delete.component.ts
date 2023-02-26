@@ -31,9 +31,9 @@ export class BannerDeleteComponent implements OnInit {
 
   reloadCurrentRoute() {
     this.handleDelete()
-    this.toast.success({ detail: 'Thành công', summary: 'Xóa thành công', duration: 4000 })
     let currentUrl = this.router.url;
     this.router.navigateByUrl('http://localhost:4200/admin/banner', { skipLocationChange: true }).then(() => {
+      this.toast.success({ detail: 'Thành công', summary: 'Xóa thành công', duration: 4000 })
       this.router.navigate([currentUrl]);
     });
   }

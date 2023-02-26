@@ -42,7 +42,7 @@ export class BrandEditComponent implements OnInit {
           this.router.navigate(['/admin/brand']);
         }),
         error: (err) => {
-          this.toast.error({ detail: 'Thất bại', summary: 'Có lỗi xảy ra', duration: 4000 })
+          this.toast.error({ detail: 'Thất bại', summary: `${err.error}`, duration: 4000 })
         }
       })
 

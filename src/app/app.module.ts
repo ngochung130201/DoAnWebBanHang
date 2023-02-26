@@ -12,7 +12,8 @@ import { RouterModule } from '@angular/router';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { SwiperModule } from 'swiper/angular';
 import { ClientRoutingModule } from './client/client-routing.module'
-import { LoginComponent } from './client/pages/login/login.component';
+
+
 import { HeaderComponent } from './client/components/header/header.component';
 import { FooterComponent } from './client/components/footer/footer.component';
 import { ButtonComponent } from './client/components/button/button.component';
@@ -34,9 +35,10 @@ import { ProductAdminComponent } from './admin/pages/product/product-admin/produ
 import { ProductCreateComponent } from './admin/pages/product/product-create/product-create.component';
 import { ProductEditComponent } from './admin/pages/product/product-edit/product-edit.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-
+import { MatSelectModule } from '@angular/material/select';
 import { ProductDeleteComponent } from './admin/pages/product/product-delete/product-delete.component';
 import { MatDialog } from '@angular/material/dialog/dialog';
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { BrandDeleteComponent } from './admin/pages/brand/brand-delete/brand-delete.component';
@@ -81,10 +83,13 @@ import { ProductCategoryIndexComponent } from './admin/pages/productCategory/pro
 import { ProductCategoryCreateComponent } from './admin/pages/productCategory/product-category-create/product-category-create.component';
 import { ProductCategoryEditComponent } from './admin/pages/productCategory/product-category-edit/product-category-edit.component';
 import { ProductCategoryDeleteComponent } from './admin/pages/productCategory/product-category-delete/product-category-delete.component';
-
-
-
-
+import { CurrencyPipe } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { LoginComponent } from './client/pages/login/login.component';
+import { LoginadminComponent } from './admin/pages/loginadmin/loginadmin/loginadmin.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -149,6 +154,7 @@ import { ProductCategoryDeleteComponent } from './admin/pages/productCategory/pr
     ProductCategoryCreateComponent,
     ProductCategoryEditComponent,
     ProductCategoryDeleteComponent,
+    LoginadminComponent,
 
 
   ],
@@ -168,10 +174,17 @@ import { ProductCategoryDeleteComponent } from './admin/pages/productCategory/pr
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgToastModule
+    NgToastModule,
+    MatSelectModule,
+    MatProgressBarModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatCheckboxModule
+
 
   ],
-  providers: [],
+  providers: [CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

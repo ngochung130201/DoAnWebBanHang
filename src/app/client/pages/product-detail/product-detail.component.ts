@@ -6,6 +6,11 @@ import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { Typeproduct } from '../home/typeHome.type';
 import SwiperCore, { Navigation, Pagination, Swiper } from 'swiper';
 import { isPlatformBrowser } from '@angular/common';
+import { ProductClientService } from '../../services/productClient/product-client.service';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { TypeProducts } from 'src/app/admin/types/TypeProducts';
+import { ProductService } from 'src/app/admin/service/product/product.service';
+import { OrderClientService } from '../../services/OrderClient/order-client.service';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination]);
@@ -17,7 +22,12 @@ SwiperCore.use([Navigation, Pagination]);
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductClientService, private _routerAc: ActivatedRoute, private productBE: ProductService
+
+    ,
+    private orderService: OrderClientService
+
+  ) { }
   freeShip = faTruckFast;
   faShield = faShield;
   faRoteleLeft = faRotateLeft;
@@ -25,8 +35,13 @@ export class ProductDetailComponent implements OnInit {
   faLaptop = faLaptop;
   faRight = faChevronRight;
   isNavigation: boolean = false;
+  brandName: string = '';
+  brandID: number = 0;
+  listProductBrand: Array<TypeProducts> = [];
   ngOnInit(): void {
-
+    this.slug = this._routerAc.snapshot.params['id'];
+    this.getProductBySlug(this.slug)
+    this.getAllProductBrand()
   }
   listService: Array<TyProductDetail> = [{
     id: '1',
@@ -69,175 +84,45 @@ export class ProductDetailComponent implements OnInit {
 
 
   ]
-  listProduct: Array<Typeproduct> = [{
-
-    id: "1",
-    brand: 'MSI',
-    freeShip: true,
-    image: './assets/image/product/msi.webp',
-    name: 'Màn hình LCD MSI PRO MP242C (1920 x 1080/VA/75Hz/1 ms)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  {
-    id: "1",
-    brand: 'ASUS',
-    freeShip: false,
-    image: './assets/image/product/asus.webp',
-    name: 'Màn hình LCD ASUS VP249QGR (1920 x 1080/IPS/144Hz/1 ms/FreeSync)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  {
-    id: "1",
-    brand: 'ASUS',
-    freeShip: true,
-    image: './assets/image/product/asus.webp',
-    name: 'Màn hình LCD ASUS VP249QGR (1920 x 1080/IPS/144Hz/1 ms/FreeSync)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  {
-    id: "1",
-    brand: 'ASUS',
-    freeShip: true,
-    image: './assets/image/product/asus.webp',
-    name: 'Màn hình LCD ASUS VP249QGR (1920 x 1080/IPS/144Hz/1 ms/FreeSync)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  {
-    id: "1",
-    brand: 'ASUS',
-    freeShip: true,
-    image: './assets/image/product/asus.webp',
-    name: 'Màn hình LCD ASUS VP249QGR (1920 x 1080/IPS/144Hz/1 ms/FreeSync)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  {
-    id: "1",
-    brand: 'MSI',
-    freeShip: true,
-    image: './assets/image/product/msi.webp',
-    name: 'Màn hình LCD MSI PRO MP242C (1920 x 1080/VA/75Hz/1 ms)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  {
-    id: "1",
-    brand: 'MSI',
-    freeShip: true,
-    image: './assets/image/product/msi.webp',
-    name: 'Màn hình LCD MSI PRO MP242C (1920 x 1080/VA/75Hz/1 ms)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-
-  {
-    id: "1",
-    brand: 'MSI',
-    freeShip: true,
-    image: './assets/image/product/msi.webp',
-    name: 'Màn hình LCD MSI PRO MP242C (1920 x 1080/VA/75Hz/1 ms)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-
-  {
-    id: "1",
-    brand: 'MSI',
-    freeShip: true,
-    image: './assets/image/product/msi.webp',
-    name: 'Màn hình LCD MSI PRO MP242C (1920 x 1080/VA/75Hz/1 ms)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  {
-    id: "1",
-    brand: 'ASUS',
-    freeShip: false,
-    image: './assets/image/product/asus.webp',
-    name: 'Màn hình LCD ASUS VP249QGR (1920 x 1080/IPS/144Hz/1 ms/FreeSync)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  {
-    id: "1",
-    brand: 'ASUS',
-    freeShip: true,
-    image: './assets/image/product/asus.webp',
-    name: 'Màn hình LCD ASUS VP249QGR (1920 x 1080/IPS/144Hz/1 ms/FreeSync)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  {
-    id: "1",
-    brand: 'ASUS',
-    freeShip: true,
-    image: './assets/image/product/asus.webp',
-    name: 'Màn hình LCD ASUS VP249QGR (1920 x 1080/IPS/144Hz/1 ms/FreeSync)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  {
-    id: "1",
-    brand: 'ASUS',
-    freeShip: true,
-    image: './assets/image/product/asus.webp',
-    name: 'Màn hình LCD ASUS VP249QGR (1920 x 1080/IPS/144Hz/1 ms/FreeSync)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  {
-    id: "1",
-    brand: 'MSI',
-    freeShip: true,
-    image: './assets/image/product/msi.webp',
-    name: 'Màn hình LCD MSI PRO MP242C (1920 x 1080/VA/75Hz/1 ms)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  {
-    id: "1",
-    brand: 'MSI',
-    freeShip: true,
-    image: './assets/image/product/msi.webp',
-    name: 'Màn hình LCD MSI PRO MP242C (1920 x 1080/VA/75Hz/1 ms)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-
-  {
-    id: "1",
-    brand: 'MSI',
-    freeShip: true,
-    image: './assets/image/product/msi.webp',
-    name: 'Màn hình LCD MSI PRO MP242C (1920 x 1080/VA/75Hz/1 ms)',
-    percentPrice: 26900000,
-    price: 3090000,
-    reducedPrice: 12
-  },
-  ]
+  IsfreeShip: boolean = true;
+  listProduct: Array<TypeProducts> = []
+  products: Array<TypeProducts> = [];
   settings = {
     counter: false,
     plugins: [lgZoom]
   };
+  getProductBySlug(slug: string) {
+
+    this.productBE.getProduct(slug).subscribe({
+      next: (pro => {
+        this.brandName = pro.brandName;
+        this.brandID = pro.brandID;
+
+        this.products.push(pro);
+
+
+
+
+      })
+    })
+  }
+  getAllProductBrand() {
+    this.productService.getAllProduct().subscribe(product => {
+
+      this.listProduct = product.products;
+
+      this.listProduct.map(productItem => {
+
+        if (productItem.brandID === this.brandID) {
+          this.listProductBrand.push(productItem);
+        }
+
+      })
+
+
+
+    })
+  }
   onBeforeSlide = (detail: BeforeSlideDetail): void => {
     const { index, prevIndex } = detail;
     console.log(index, prevIndex);
@@ -247,10 +132,27 @@ export class ProductDetailComponent implements OnInit {
     return this.isNavigation = !this.isNavigation;
   }
   setSwiperInstance(swiper: Swiper) {
-    setInterval(() => {
-      swiper.slideNext();
-    }, 3000);
+    // setInterval(() => {
+    //   swiper.slideNext();
+    // }, 3000);
   }
+  slug: string = '';
+
+  OnOrder() {
+    console.log(this.products);
+    this.products.map(product => {
+      this.orderService.createOrder({
+        productName: product.name
 
 
+      }).subscribe({
+        next: (res => {
+          console.log('thanh cong');
+        }),
+        error: (err => {
+          console.log(err);
+        })
+      })
+    })
+  }
 }

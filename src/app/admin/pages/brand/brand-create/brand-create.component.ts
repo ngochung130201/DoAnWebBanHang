@@ -31,8 +31,8 @@ export class BrandCreateComponent implements OnInit {
           this.router.navigate(['/admin/brand']);
         },
         err => {
-
-          this.toast.error({ detail: 'Thất bại', summary: ` ${err.error.err} !`, duration: 4000 });
+          console.log(err);
+          this.toast.error({ detail: 'Thất bại', summary: ` ${err.error} !`, duration: 4000 });
         }
       );
   }

@@ -49,7 +49,7 @@
 
     </div>
     <div class="w-full">
-      <section class="  body-font text-gray-600 flex flex-wrap ">
+      <section class="  body-font text-gray-600  ">
         <div class="flex items-center flex-wrap">
           <div class="text-sm text-color-main font-semibold">Sắp xếp thêm</div>
           <div class="flex ml-10 gap-4 flex-wrap">
@@ -61,30 +61,33 @@
           </div>
         </div>
         <div class=" px-1 py-10">
-          <div class="-m-4 bg-white flex flex-wrap  ">
-            <div class="w-full border border-solid border-[#eeeeee] p-4 md:w-1/2  lg:w-1/5"
-              *ngFor="let product of listProduct">
-              <a routerLink="/san-pham/{{product.id}}" class="relative block overflow-hidden rounded">
-                <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer"
-                  src="{{product.image}}" />
-              </a>
-              <div class="mt-4">
-                <a href="">
-                  <h3 class=" mb-1 text-xs tracking-widest text-gray-500">{{product.brand}}</h3>
-                  <div class=" text-xs font-medium text-gray-900">{{product.name}}</div>
-                  <div class="flex justify-between">
-                    <div>
-                      <p class="mt-1 text-color-primary font-bold">{{product.percentPrice}}đ</p>
-                      <div class="flex">
-                        <p class="mt-1 line-through">{{product.price}}đ</p>
-                        <p class="text-color-primary">-{{product.reducedPrice}}%</p>
+          <div class="-m-4 bg-white  ">
+            <div class="flex flex-wrap">
+              <div class=" border border-solid  border-[#eeeeee] p-4 md:w-1/2  lg:w-1/5"
+                *ngFor="let product of listProduct">
+                <a routerLink="/san-pham/{{product.slug}}" class="relative block overflow-hidden rounded">
+                  <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer"
+                    src="{{product.image}}" />
+
+                </a>
+                <div class="mt-4">
+                  <a href="">
+                    <h3 class=" mb-1 text-xs tracking-widest text-gray-500">{{product.brandName}}</h3>
+                    <div class=" text-xs font-medium text-gray-900">{{product.name}}</div>
+                    <div class="flex justify-between">
+                      <div>
+                        <p class="mt-1 text-color-primary font-bold">{{product.promotionPrice}}đ</p>
+                        <div class="flex">
+                          <p class="mt-1 line-through">{{product.price}}đ</p>
+                          <p class="text-color-primary">-{{product.price}}%</p>
+                        </div>
+                      </div>
+                      <div *ngIf="product.isFreeship">
+                        <fa-icon class="text-sm text-[#30cd60]" [icon]="freeShip"></fa-icon>
                       </div>
                     </div>
-                    <div *ngIf="product.freeShip">
-                      <fa-icon class="text-sm text-[#30cd60]" [icon]="freeShip"></fa-icon>
-                    </div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
             </div>
             <div class="flex justify-center item-center flex-1 mt-10">

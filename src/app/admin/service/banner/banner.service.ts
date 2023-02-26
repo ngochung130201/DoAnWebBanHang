@@ -19,7 +19,7 @@ export class BannerService {
     return this.http.delete<TySlider[]>(`${this.baseUrl}/${id}`);
   }
 
-  public createBanner(data: TySlider): Observable<number> {
+  public createBanner(data: any): Observable<number> {
     return this.http.post<number>(`${this.baseUrl}`, data);
   }
 
@@ -34,4 +34,5 @@ export class BannerService {
   public deleteBannerAll(data: any): Observable<any> {
     return this.http.delete(`${this.baseUrl}`, data);
   }
+
 }

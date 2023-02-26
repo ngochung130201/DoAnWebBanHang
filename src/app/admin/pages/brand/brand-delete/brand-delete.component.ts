@@ -16,8 +16,6 @@ export class BrandDeleteComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: TypeDeleteBrand, private BrandService: BrandService, private router: Router, private toast: NgToastService) { }
 
   ngOnInit(): void {
-    this.handleDelete()
-
   }
   brandID: string = '';
   listBrand: Array<TyBrand> = [];
@@ -26,15 +24,22 @@ export class BrandDeleteComponent implements OnInit {
     this.brandID = this.data.brandID;
     console.log(this.brandID);
     this.BrandService.deleteBrand(this.brandID).subscribe(
+      {
+        next: (data => {
 
+        }),
+        error: (err => {
+          this.toast.error({ detail: 'Thất bại', summary: 'Có lỗi xảy ra vui lòng kiểm tra lại !', duration: 4000 })
+        })
+      }
     )
   }
 
   reloadCurrentRoute() {
     this.handleDelete()
-    this.toast.success({ detail: 'Thành công', summary: 'Xóa thành công', duration: 4000 })
     let currentUrl = this.router.url;
     this.router.navigateByUrl('http://localhost:4200/admin/brand', { skipLocationChange: true }).then(() => {
+      this.toast.success({ detail: 'Thành công', summary: 'Xóa thành công', duration: 4000 })
       this.router.navigate([currentUrl]);
     });
   }

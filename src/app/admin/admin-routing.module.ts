@@ -20,6 +20,8 @@ import { CategoryEditComponent } from './pages/category/category-edit/category-e
 import { CategoryIndexComponent } from './pages/category/category-index/category-index.component';
 import { ContactDetailComponent } from './pages/contact/contact-detail/contact-detail.component';
 import { ContactComponent } from './pages/contact/contact/contact.component';
+import { LoginadminComponent } from './pages/loginadmin/loginadmin/loginadmin.component';
+
 import { MenuCreateComponent } from './pages/menu/menu-create/menu-create.component';
 import { MenuEditComponent } from './pages/menu/menu-edit/menu-edit.component';
 import { MenuIndexComponent } from './pages/menu/menu-index/menu-index.component';
@@ -42,6 +44,11 @@ import { SuppliersIndexComponent } from './pages/suppliers/suppliers-index/suppl
 const routes: Routes = [
   {
     path: 'admin',
+    component: LoginadminComponent
+
+  },
+  {
+    path: 'admin/Home',
     component: AdminHomeComponent
 
   }

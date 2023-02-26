@@ -20,16 +20,21 @@ export class BannerCreateComponent implements OnInit {
     ,
     link: new FormControl(''),
     isStatus: new FormControl(true, Validators.required),
-    image: new FormControl('')
+    image: new FormControl(''),
+    fileImages: new FormControl('')
   })
+  formData: FormData = new FormData();
+
   handleCreate() {
+
     try {
-      this.BannerService.createBanner(this.BannerFormCreate.value).subscribe({
+      this.BannerService.createBanner(this.formData).subscribe({
         next: (item => {
           this.toast.success({ detail: 'Thành công', summary: 'Thêm thành công', duration: 4000 })
           this.router.navigate(['/admin/banner']);
         }),
         error: (err) => {
+          console.log(err);
           this.toast.error({ detail: 'Thất bại', summary: 'Có lỗi xảy ra', duration: 4000 })
         }
       })
@@ -38,5 +43,6 @@ export class BannerCreateComponent implements OnInit {
     }
     console.log('das');
   }
+
 
 }

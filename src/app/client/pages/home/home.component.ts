@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { faAngleLeft, faAngleRight, faTruckFast } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faAngleRight, faBolt, faTruckFast } from '@fortawesome/free-solid-svg-icons';
 import { Typeproduct } from './typeHome.type';
 import SwiperCore, { Navigation, Pagination, Swiper } from 'swiper';
 import { BannerService } from '../../services/banner/banner.service';
@@ -21,8 +21,13 @@ export class HomeComponent implements OnInit {
   slideInteval = 3000;
   freeShip = faTruckFast;
   nextIcon = faAngleRight;
-  leftIcon = faAngleLeft
+  leftIcon = faAngleLeft;
+  faBolt = faBolt
   images: Array<TySlider> = []
+  public timeLeft: Date = new Date();
+  listBanner: Array<string> = [
+    'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2023/02/banner/Befit720-220-720x220-1.png', 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2023/01/banner/720-220-720x220-172.png'
+  ]
   selectImage(index: number): void {
     this.selectIndex = index;
   }
@@ -46,9 +51,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBanner()
-    if (this.autoSilde) {
-      this.autoSildeImages();
-    }
+    // if (this.autoSilde) {
+    //   this.autoSildeImages();
+    // }
+
 
   }
   ngOnChanges(): void {
@@ -243,9 +249,9 @@ export class HomeComponent implements OnInit {
 
   ]
   setSwiperInstance(swiper: Swiper) {
-    setInterval(() => {
-      swiper.slideNext();
-    }, 3000);
+    // setInterval(() => {
+    //   swiper.slideNext();
+    // }, 5000);
   }
 
 }

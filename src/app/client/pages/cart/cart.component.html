@@ -76,7 +76,7 @@
                             class=" text-gray-600 h-full w-20 rounded-l cursor-pointer outline-none">
                             <span class="m-auto text-2xl font-thin">−</span>
                           </button>
-                          <input type="number"
+                          <input type="number" disabled
                             class="focus:outline-none text-center w-full font-semibold text-md hover:text-black focus:text-black md:text-basecursor-default flex items-center text-gray-700 outline-none"
                             name="custom-input-number " value="{{ cart.amount}}" />
                           <button (click)=" countUp(cart.id,cart.priceDiscount)" data-action="increment"

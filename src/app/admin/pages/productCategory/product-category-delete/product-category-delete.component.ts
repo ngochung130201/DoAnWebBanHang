@@ -23,15 +23,22 @@ export class ProductCategoryDeleteComponent implements OnInit {
 
   handleDelete() {
     this.cateID = this.data.ProductCategoryID;
-
     this.ProductCategoryservice.deleteProductCategory(this.cateID).subscribe(
-
+      {
+        next: (data => {
+          this.toast.success({ detail: 'Thành công', summary: 'Xóa thành công', duration: 4000 })
+          this.reloadCurrentRoute()
+        }),
+        error: (err => {
+          this.toast.error({ detail: 'Thất bại', summary: 'Có lỗi xảy ra vui lòng kiểm tra lại !', duration: 4000 })
+        })
+      }
     )
   }
 
   reloadCurrentRoute() {
-    this.handleDelete()
-    this.toast.success({ detail: 'Thành công', summary: 'Xóa thành công', duration: 4000 })
+
+
     let currentUrl = this.router.url;
     this.router.navigateByUrl('http://localhost:4200/admin/productCategory', { skipLocationChange: true }).then(() => {
       this.router.navigate([currentUrl]);

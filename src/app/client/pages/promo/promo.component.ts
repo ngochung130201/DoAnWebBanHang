@@ -9,7 +9,7 @@ SwiperCore.use([Navigation, Pagination]);
   selector: 'app-promo',
   templateUrl: './promo.component.html',
   styleUrls: ['./promo.component.scss'],
-  encapsulation: ViewEncapsulation.None
+
 })
 export class PromoComponent implements OnInit {
 
